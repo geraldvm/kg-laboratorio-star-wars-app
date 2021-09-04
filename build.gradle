@@ -1,6 +1,7 @@
 plugins {
     id 'application'
     id "org.sonarqube" version "3.1.1"
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 sourceCompatibility = 16
 
@@ -24,11 +25,11 @@ dependencies {
 jar {
     manifest {
         attributes(
-                "Main-Class": "Main"
+                "Main-Class": "HTTP.Main"
         )
     }
 }
-mainClassName = "Main"
+mainClassName = "HTTP.Main"
 
 test {
     useJUnitPlatform()
@@ -40,4 +41,9 @@ sonarqube {
         property "sonar.organization", "linear-data-structures"
         property "sonar.host.url", "https://sonarcloud.io"
     }
+}
+
+javafx {
+    version = "16"
+    modules = [ 'javafx.controls' ]
 }
