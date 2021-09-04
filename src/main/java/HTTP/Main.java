@@ -9,11 +9,17 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+//comentario
 
 import java.io.IOException;
 
 public class Main {
     private static ObjectMapper mapper = new ObjectMapper();
+
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
 
     public static void main(String[] args) throws IOException, IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -31,6 +37,9 @@ public class Main {
                     var result = EntityUtils.toString(entity);
                     ApiResponse<Character> parsedResponse = mapper.readValue(result, mapper.getTypeFactory().constructParametricType(ApiResponse.class, Character.class));
                     System.out.println(result);
+                    //comentario 1
+                    //comentario 2
+
                 }
             } finally {
                 response.close();
