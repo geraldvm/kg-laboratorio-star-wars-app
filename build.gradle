@@ -28,10 +28,8 @@ jar {
     }
 }
 
-application {
-    mainClass = 'Main'
-}
 
+mainClassName = 'Main'
 test {
     useJUnitPlatform()
 }

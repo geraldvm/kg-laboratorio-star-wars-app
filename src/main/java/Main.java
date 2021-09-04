@@ -25,8 +25,7 @@ public class Main {
                 HttpEntity entity = response.getEntity();
                 if (entity != null) {
                     var result = EntityUtils.toString(entity);
-                    ApiResponse<Character> parsedResponse = mapper.readValue(
-                            result, mapper.getTypeFactory().constructParametricType(ApiResponse.class, Character.class));
+                    ApiResponse<Character> parsedResponse = mapper.readValue(result, mapper.getTypeFactory().constructParametricType(ApiResponse.class, Character.class));
                     System.out.println(result);
                 }
             } finally {
