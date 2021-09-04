@@ -2,6 +2,7 @@ plugins {
     id 'application'
     id "org.sonarqube" version "3.1.1"
 }
+sourceCompatibility = 16
 
 group 'org.example'
 version '1.0.0'
@@ -23,21 +24,20 @@ dependencies {
 jar {
     manifest {
         attributes(
-          "Main-Class": "Main"
+                "Main-Class": "Main"
         )
     }
 }
+mainClassName = "Main"
 
-
-mainClassName = 'Main'
 test {
     useJUnitPlatform()
 }
 
 sonarqube {
-  properties {
-    property "sonar.projectKey", "IsaacSNK_gradle-tutorial"
-    property "sonar.organization", "linear-data-structures"
-    property "sonar.host.url", "https://sonarcloud.io"
-  }
+    properties {
+        property "sonar.projectKey", "IsaacSNK_gradle-tutorial"
+        property "sonar.organization", "linear-data-structures"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
