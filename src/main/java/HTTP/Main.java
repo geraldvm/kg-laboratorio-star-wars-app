@@ -16,6 +16,11 @@ import java.io.IOException;
 public class Main {
     private static ObjectMapper mapper = new ObjectMapper();
 
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
     public static void main(String[] args) throws IOException, IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         try {
