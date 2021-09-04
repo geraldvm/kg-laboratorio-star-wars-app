@@ -9,6 +9,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+//comentario
 
 import java.io.IOException;
 
@@ -24,7 +25,7 @@ public class Main {
                 System.out.println(response.getProtocolVersion());              // HTTP/1.1
                 System.out.println(response.getStatusLine().getStatusCode());   // 200
                 System.out.println(response.getStatusLine().getReasonPhrase()); // OK
-                //System.out.println(response.getStatusLine().toString());        // HTTP/1.1 200 OK
+                System.out.println(response.getStatusLine().toString());        // HTTP/1.1 200 OK
 
                 HttpEntity entity = response.getEntity();
                 if (entity != null) {
@@ -32,6 +33,8 @@ public class Main {
                     ApiResponse<Character> parsedResponse = mapper.readValue(result, mapper.getTypeFactory().constructParametricType(ApiResponse.class, Character.class));
                     System.out.println(result);
                     //comentario 1
+                    //comentario 2
+
                 }
             } finally {
                 response.close();
